@@ -11,8 +11,8 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @Builder
 public class HistoriqueTrajetReqDTO {
-    @NotEmpty(message = "entrez  id du trajet !")
+    private String historiqueTrajetId;
     private String trajetId;
     @NotEmpty(message = "entrez votre role !")
-    private String roleDansTrajet;
+    private String rolUseInTrajet;
 }

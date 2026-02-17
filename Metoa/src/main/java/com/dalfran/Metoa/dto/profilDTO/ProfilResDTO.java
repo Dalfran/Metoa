@@ -10,8 +10,8 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class ProfiResDTO {
-    private String id;
+public class ProfilResDTO {
+    private String profiId;
     private String adresse;
     private String sexe;
     private String dateNaissance;

@@ -10,9 +10,9 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @Builder
 public class HistoriqueTrajetResDTO {
-    private String id;
+    private String historiqueTrajetId;
     private String trajetId;
     private String dateTrajet;
-    private String roleDansTrajet;
+    private String rolUseInTrajet;
     private String statutTrajet;
 }

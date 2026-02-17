@@ -12,7 +12,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class UerReqDTO {
+public class UserReqDTO {
     @NotEmpty(message = "entrez votre nom !")
     private String nom;
     @NotEmpty(message = "entrez votre prenom !")

@@ -13,7 +13,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @Builder
 public class UserResDTO {
-    private String id;
+    private String idUser;
     private String nom;
     private String prenom;
     private String telephone;

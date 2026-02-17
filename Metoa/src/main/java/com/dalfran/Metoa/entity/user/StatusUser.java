@@ -1,4 +1,7 @@
 package com.dalfran.Metoa.entity.user;
 
-public enum StatusCompte {
+public enum StatusUser {
+    ACTIF,
+    SUSPENDUE,
+    BLOQUER
 }

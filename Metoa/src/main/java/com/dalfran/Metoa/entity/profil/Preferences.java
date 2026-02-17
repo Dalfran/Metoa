@@ -1,6 +1,6 @@
 package com.dalfran.Metoa.entity.profil;
 
-public enum Peferences {
+public enum Preferences {
     MUSIQUE,
     DISCUSSION,
     CLIMATISATION

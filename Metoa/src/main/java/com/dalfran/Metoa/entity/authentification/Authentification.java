@@ -1,4 +1,4 @@
-package com.dalfran.Metoa.entity.profil;
+package com.dalfran.Metoa.entity.authentification;
 
 import com.dalfran.Metoa.entity.user.User;
 import jakarta.persistence.*;
@@ -7,6 +7,7 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.time.LocalDateTime;
 
 
 @Data
@@ -14,16 +15,15 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @Builder
 @Entity
-@Table(name = "Profils")
-public class Profil {
+@Table(name = "Authentification")
+public class Authentification {
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
-    private String profilId;
-    private String adresse;
-    private String sexe;
-    private String dateNaissance;
-    private String bio;
-    private Preferences preferences;
+    private String authentificationId;
+    private String login;
+    private String motDePasse;
+    private LocalDateTime dernierAcces;
+    private CompteurActivite compteurActivite;
     @OneToOne
     private User user;
 }

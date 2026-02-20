@@ -10,8 +10,8 @@ public interface historiqueTrajetMapper {
     HistoriqueTrajetResDTO toResDTO(HistoriqueTrajet historique);
 
     @Mapping(target = "historiqueTrajetId", ignore = true)
-    @Mapping(target = "TrajetId", ignore = true)
+    @Mapping(target = "trajetId", ignore = true)
     @Mapping(target = "dateTrajet", ignore = true)
     @Mapping(target = "user", ignore = true)
-    HistoriqueTrajet toEntity(HistoriqueTrajetReqDTO dto);
+    HistoriqueTrajet toEntity(HistoriqueTrajetReqDTO historiqueTrajetReqDTO);
 }

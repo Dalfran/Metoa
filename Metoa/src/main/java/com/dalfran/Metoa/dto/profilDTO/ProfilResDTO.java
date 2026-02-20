@@ -14,6 +14,7 @@ public class ProfilResDTO {
     private String profiId;
     private String adresse;
     private String sexe;
+    private String photoUrl;
     private String dateNaissance;
     private String bio;
 }

@@ -5,6 +5,7 @@ import com.dalfran.Metoa.dto.profilDTO.ProfilResDTO;
 import com.dalfran.Metoa.entity.profil.Profil;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
+import org.mapstruct.MappingTarget;
 import org.mapstruct.factory.Mappers;
 
 @Mapper(componentModel = "spring")
@@ -14,6 +15,8 @@ public interface ProfilMapper {
 
     ProfilResDTO toResDTO(Profil profil);
     @Mapping(target = "profilId", ignore = true)
-    @Mapping(target = "user", ignore = true)
     Profil toEntity(ProfilReqDTO profilReqDTO);
+    @Mapping(target = "profilId", ignore = true)
+    void updateProfilFromDTO(ProfilReqDTO dto, @MappingTarget Profil profil);
+
 }

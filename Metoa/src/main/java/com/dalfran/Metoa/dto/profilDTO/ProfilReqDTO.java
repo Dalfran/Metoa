@@ -15,6 +15,7 @@ public class ProfilReqDTO {
     @NotEmpty(message = "entrez votre adress !")
     private String adresse;
     private String sexe;
+    private String photoUrl;
     private String dateNaissance;
     @NotEmpty(message = "entrez votre bio !")
     private String bio;

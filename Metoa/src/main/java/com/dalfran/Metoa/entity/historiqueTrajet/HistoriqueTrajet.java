@@ -14,16 +14,32 @@ import java.time.LocalDate;
 @AllArgsConstructor
 @Builder
 @Entity
-@Table(name = "historiqueTrajets")
+@Table(name = "historique_Trajets")
 public class HistoriqueTrajet {
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
+    @Column(name = "historique_trajet_id", length = 36, nullable = false)
     private String historiqueTrajetId;
-    private String TrajetId ;
+
+    @Column(name = "trajet_id", nullable = false)
+    private String trajetId;
+
+    @Column(name = "date_trajet", nullable = false)
     private LocalDate dateTrajet;
-    private String rolUseInTrajet;
+
+    @Column(name = "role_user_trajet", nullable = false)
+    private String roleUserInTrajet;
+
+    @Enumerated(EnumType.STRING)
+    @Column(name = "status_trajet", nullable = false)
     private StatusTrajet statusTrajet;
-    @ManyToOne
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(
+            name = "user_id_user",
+            referencedColumnName = "id_user",
+            nullable = false
+    )
     private User user;
 
 }

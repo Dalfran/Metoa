@@ -1,6 +1,7 @@
 package com.dalfran.Metoa.dto.profilDTO;
 
 
+import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotEmpty;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -19,4 +20,6 @@ public class ProfilReqDTO {
     private String dateNaissance;
     @NotEmpty(message = "entrez votre bio !")
     private String bio;
+    @NotBlank(message = "Les préférences sont obligatoires")
+    private String preferences;
 }

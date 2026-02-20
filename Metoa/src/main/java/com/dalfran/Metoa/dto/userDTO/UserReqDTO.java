@@ -20,7 +20,6 @@ public class UserReqDTO {
     private String nom;
     @NotEmpty(message = "entrez votre prenom !")
     private String prenom;
-    private String sexe;
     @NotEmpty(message = "entrez votre tel ")
     private String telephone;
     @Email(message = "votre email est erronee !")

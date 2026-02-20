@@ -4,6 +4,7 @@ import com.dalfran.Metoa.classMapp.ProfilMapper;
 import com.dalfran.Metoa.classMapp.UserMapper;
 import com.dalfran.Metoa.dto.userDTO.UserReqDTO;
 import com.dalfran.Metoa.dto.userDTO.UserResDTO;
+import com.dalfran.Metoa.entity.profil.Profil;
 import com.dalfran.Metoa.entity.user.StatusUser;
 import com.dalfran.Metoa.entity.user.User;
 import com.dalfran.Metoa.exception.UserNoteFoundException;
@@ -39,7 +40,10 @@ public class UserServiceImpl implements UserService{
         user.setStatusUser(StatusUser.ACTIF);
 
         if (userReqDTO.getProfil() != null) {
-            user.setProfil(profilMapper.toEntity(userReqDTO.getProfil()));
+            Profil profil = profilMapper.toEntity(userReqDTO.getProfil());
+
+            profil.setUser(user);
+            user.setProfil(profil);
         }
 
 
@@ -51,7 +55,7 @@ public class UserServiceImpl implements UserService{
     public UserResDTO getFindByIdUser(String idUser) {
         User user= this.userRepo.findById(idUser)
                 .orElseThrow(()-> new UserNoteFoundException(idUser));
-        return userMapper.toResDTO(user);
+        return this.userMapper.toResDTO(user);
     }
 
 
@@ -72,7 +76,7 @@ public class UserServiceImpl implements UserService{
             else profilMapper.updateProfilFromDTO(userReqDTO.getProfil(), user.getProfil());
         }
 
-
+        this.userRepo.save(user);
     }
 
     @Override
@@ -82,7 +86,7 @@ public class UserServiceImpl implements UserService{
             throw new UserNoteFoundException(idUser);
         }
 
-        userRepo.deleteById(idUser);
+        this.userRepo.deleteById(idUser);
 
     }
 }

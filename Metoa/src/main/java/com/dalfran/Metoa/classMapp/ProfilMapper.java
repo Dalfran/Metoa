@@ -19,4 +19,5 @@ public interface ProfilMapper {
     @Mapping(target = "profilId", ignore = true)
     void updateProfilFromDTO(ProfilReqDTO dto, @MappingTarget Profil profil);
 
+
 }

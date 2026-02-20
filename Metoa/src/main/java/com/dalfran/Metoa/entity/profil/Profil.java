@@ -36,16 +36,15 @@ public class Profil {
     @Column(length = 500)
     private String bio;
 
-    @Enumerated(EnumType.STRING)
+
     @Column(nullable = false)
-    private Preferences preferences;
+    private String preferences;
 
     @OneToOne(fetch = FetchType.LAZY)
     @JoinColumn(
             name = "user_id_user",
             referencedColumnName = "id_user",
-            nullable = false,
-            unique = true
+            nullable = false
     )
     private User user;
 }

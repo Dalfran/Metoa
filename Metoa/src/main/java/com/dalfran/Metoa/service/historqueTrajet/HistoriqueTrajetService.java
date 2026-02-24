@@ -1,10 +1,11 @@
 package com.dalfran.Metoa.service.historqueTrajet;
 
 import com.dalfran.Metoa.dto.historiqueTrajetDTO.HistoriqueTrajetResDTO;
+import com.dalfran.Metoa.entity.historiqueTrajet.StatusTrajet;
 
 import java.util.List;
 
 public interface HistoriqueTrajetService {
-HistoriqueTrajetResDTO getFinById(String trajetId);
-List<HistoriqueTrajetResDTO> getFinAll();
+List<HistoriqueTrajetResDTO > getFindByUserIdAndStatusTrajet(String idUser , StatusTrajet statusTrajet);
+
 }

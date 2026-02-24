@@ -39,4 +39,10 @@ public class GlobalExceptionHandler extends RuntimeException {
     public ResponseEntity<String> handleAccessDenied(AccessDeniedException ex) {
         return ResponseEntity.status(403).body(ex.getMessage());
     }
+
+
+    @ExceptionHandler(NotFoundTrjetException.class)
+    public ResponseEntity<String> handleAccessDenied(NotFoundTrjetException ex) {
+        return ResponseEntity.status(403).body(ex.getMessage());
+    }
 }
